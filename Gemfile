@@ -7,6 +7,7 @@ ruby '2.6.4'
 gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -46,3 +47,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'devise', :git => "https://github.com/heartcombo/devise.git", ref: '8bb358cf80a632d3232c3f548ce7b95fd94b6eb2'
+gem 'activerecord-session_store'
+gem 'omniauth', "=1.9.1"
+gem 'omniauth-google-oauth2'
+gem 'google-api-client' , require: 'google/apis/calendar_v3'

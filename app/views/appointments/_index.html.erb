@@ -1,0 +1,8 @@
+<td><%= @serial %></td>
+<td><%= appointment.summary %></td>
+<td><%= appointment.start_date.strftime("%d %B, %Y, %A") %></td>
+<td><%= appointment.end_date.strftime("%d %B, %Y, %A") %></td>
+<td><%= appointment.status %></td>
+<td><%= appointment.created.strftime("%d %B, %Y, %A") %></td>
+<td><%= appointment.updated.strftime("%d %B, %Y, %A") %></td>
+<td><%= link_to 'Go to calendar', appointment.html_link %></td>

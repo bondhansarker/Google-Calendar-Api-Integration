@@ -1,0 +1,28 @@
+<div>
+  <h1 class="sync_button"><%= link_to "Sync Google Calendar", google_calendar_appointments_path %></h1>
+  <h2 class="log_out_button"><%= link_to "Log Out", destroy_user_session_path %></h2>
+</div>
+<% if @appointments.empty? %>
+  <h2>You have no appointments in Google Calendar.</h2>
+<% else %>
+  <h2>My Google Calendar Appointments</h2>
+  <table>
+    <tr>
+      <th> #</th>
+      <th> Summary</th>
+      <th> Start Date</th>
+      <th> End Date</th>
+      <th> Status</th>
+      <th> Created at</th>
+      <th> Updated at</th>
+      <th> Action</th>
+    </tr>
+    <% if @appointments.present? %>
+      <% @serial = 1 %>
+      <% @appointments.each do |appointment| %>
+        <tr> <%= render partial: 'index', locals: {appointment: appointment} %> </tr>
+        <% @serial += 1 %>
+      <% end %>
+    <% end %>
+  </table>
+<% end %>
