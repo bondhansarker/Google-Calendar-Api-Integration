@@ -10,8 +10,6 @@ class AppointmentsControllerTest < ActionController::TestCase
     super
   end
 
-
-
   test 'authenticated users can access index' do
     get :index
     assert_response :success
