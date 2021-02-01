@@ -21,7 +21,7 @@ Rails.application.configure do
   config.public_file_server.headers = {
     'Cache-Control' => "public, max-age=#{1.hour.to_i}"
   }
-
+  config.factory_bot.definition_file_paths = ["test/factories"]
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
@@ -44,6 +44,9 @@ Rails.application.configure do
 
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
+
+
+
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
