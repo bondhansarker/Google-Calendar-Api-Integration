@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_01_29_114722) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "appointments", force: :cascade do |t|
     t.string "appointment_id"
     t.string "summary"
@@ -24,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_114722) do
     t.string "html_link"
     t.datetime "created"
     t.datetime "updated"
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.index ["appointment_id"], name: "index_appointments_on_appointment_id", unique: true
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
